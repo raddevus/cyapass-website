@@ -773,8 +773,13 @@ function initApp(){
 	$("#OKSiteKeyButton").click(addOrEditSiteKey);
 	$("#OKDeleteButton").click(deleteSiteKey);
 	$("#AddSiteKeyModal").keypress(handleEnterKey);
-	document.querySelector("#OKExportButton").addEventListener("click",okExportHandler);
-	document.querySelector("#OKTransferButton").addEventListener("click",okTransferHandler);
+
+   // had to add these checks for null 
+   // because the offline files doesn't have import & transfer buttons
+	var okExportBtn = document.querySelector("#OKExportButton");
+      if (okExportBtn != null){ okExportBtn.addEventListener("click",okExportHandler);}
+   var okTransferBtn = document.querySelector("#OKTransferButton");
+      if (okTransferBtn != null){okTransferBtn.addEventListener("click",okTransferHandler);}
 	$('#AddSiteKeyModal').on('shown.bs.modal', function () {
 		$("#SiteKeyItem").focus();
 	});
