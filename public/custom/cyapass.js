@@ -3,7 +3,7 @@
 
 var ctx = null;
 var theCanvas = null;
-window.addEventListener("load", initApp);
+document.addEventListener('DOMContentLoaded', initApp);
 
 // *******************************
 // ****** begin CYaPass code *****
