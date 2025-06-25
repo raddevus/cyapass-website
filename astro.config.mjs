@@ -9,6 +9,10 @@ import rehypeExternalLinks from 'rehype-external-links'
 export default defineConfig({
   site: 'https://astro-blog-template.netlify.app',
   integrations: [mdx(), svelte()],
+   server: {
+    port: 5674,       // Change this to your desired port
+    host: '0.0.0.0'   // This makes the dev server accessible on your local network
+  },
   markdown: {
     shikiConfig: {
       theme: 'nord',
