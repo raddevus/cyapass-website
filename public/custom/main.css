@@ -1,4 +1,5 @@
 /*main.css*/
+.alwaysDarkText{ color:#555;}
 .startLocation{position:absolute;top:20px;left:650px;}
 /*#SiteListBox{margin-left:20px;width:175px;margin-top:20px;}*/
 #multiHash{ width: 60px; }
@@ -25,3 +26,4 @@ img {max-width:100%;}
 
 .topPad{margin-top: 7px;}
 .bottomPad{margin-bottom: 20px;}
+.labelPad{margin-left:5px;margin-right:5px;}

@@ -43,10 +43,10 @@ const permalink = Astro.site.href;
 					<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
 				  </svg>
 			</button>
-			<div class="row topPad">
+			<div class="row topPad alwaysDarkText">
 				<div class="col-lg-6" >
 				<input type="checkbox" id="multiHashIsOnCheckbox">
-				<label class="noselect" for="multiHashIsOnCheckbox">Use Multi-Hash</label>
+				<label class="noselect labelPad" for="multiHashIsOnCheckbox">Use Multi-Hash</label>
 					<input type="number" id="multiHash" name="multiHash" value="0" min="0" max="500" 
 					data-toggle="tooltip" data-placement="top" title="Allows you to provide another level of security by hashing your password multiple times."/>
 				</div>
@@ -111,7 +111,7 @@ const permalink = Astro.site.href;
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script> -->
 </div>
-
+<div class="alwaysDarkText">
 <div class="modal fade" id="AddSiteKeyModal" tabindex="-1" role="dialog" aria-labelledby="AddSiteKeyLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -249,7 +249,8 @@ const permalink = Astro.site.href;
 	</div>
   </div>
     </div>
-  </div>
+     </div>
+</div>
 </BaseLayout>
 
 <script>
