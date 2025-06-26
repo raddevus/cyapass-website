@@ -38,4 +38,5 @@ Linux users can install it from the <a href="https://snapcraft.io/cyapass" targe
 
 ### Downloads
 Watch here for downloads (2025-06-26) - coming soon.
-Note: Image is from openclipart.org. See more details at: https://openclipart.org/detail/225506/Drowning-colored
+
+**Note**: Image is from openclipart.org. See more details at: https://openclipart.org/detail/225506/Drowning-colored
