@@ -4,17 +4,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'Downloads';
 const description = 'Download C\'YaPass Apps';
 const permalink = `${Astro.site.href}downloads`;
+
+const downloads = [
+  {
+    name: "C'YaPass Linux AppImage",
+    version: "v1.5.0",
+    file: "/downloads/CYaPass-1.5.0.AppImage",
+    size: "380.3 MiB"
+  }
+];
+
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="downloads">
   <div class="container">
     <h1>Downloads</h1>
-    <h2>More to come soon...</h2>
-    <p>More to come, but for now (as of 2025-06-23), here are links to my GitHub repos and some other details.</p>
+    <h2>Cross-Platform - Built In ElectronJS</h2>
     <p>
+    
     <ul>
-       <li>
-       </li>
+       {downloads.map(d => (
+        <li>
+          <strong>{d.name}</strong> ({d.version}) — {d.size}
+          <br />
+          <a href={d.file} download>Download</a>
+        </li>
+      ))}
+
     </ul>
     </p>
 </BaseLayout>
