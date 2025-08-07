@@ -8,8 +8,9 @@ function logPageView() {
     referrer: document.referrer || "No referrer",
     userAgent: navigator.userAgent.replaceAll("/","-"),
   };
+   var trackingUrl = "cyapass.com";
    console.log(`UserAgent: ${metadata.userAgent}`);
-   fetch(`https://allos.dev/api/save/allos.dev/${metadata.path}/${metadata.userAgent}`);
+   fetch(`https://allos.dev/api/save/${trackingUrl}/${metadata.path}/${metadata.userAgent}`);
   console.log("🔍 Page Metadata:", metadata);
 }
 
