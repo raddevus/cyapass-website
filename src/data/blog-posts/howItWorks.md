@@ -4,7 +4,7 @@ slug: howItWorks
 publishDate: 29 Aug 2025
 description: Discover How C'YaPass Generates Your Password Every Time 
 ---
-After deploying my C'YaPass app to the Windows Store a lot of people are asking for more details about what it does and how it works. I hope this article answers those questions.
+After deploying my C'YaPass app to the <a href="https://apps.microsoft.com/detail/9pfd82d1z7rw?hl=en-us&gl=US" target="_blank">Windows Store</a> a lot of people are asking for more details about what it does and how it works. I hope this article answers those questions.
 
 ## What Is This Article Really About?
 This article is an attempt to start a conversation related to the following subjects:
@@ -128,8 +128,8 @@ Since every input has an exact SHA-256 output, a person could create a huge data
 
 Here are some words and their equivalent SHA-256 hashes.
 <img src="/assets/blog/howItWorks/hiw_004.png">
-No alt text provided for this image
-That's Why We Need A Salt
+
+## That's Why We Need A Salt
 In order to make it more difficult (or theoretically impossible) for someone to get our original value, we need to add a 2nd value to our initial input. This 2nd value is called a salt.
 
 ## Salt: Additional Word Or Phrase
@@ -185,7 +185,7 @@ You'll follow the simple steps:
 2. draw a pattern
 3. paste your password to the site you want to log in.
 
-##Paste Your Password
+## Paste Your Password
 You can simply copy it, because each time the password is generated, it is copied into your clipboard so you can paste it.
 
 ## Remembers Special Password Requirements
@@ -198,82 +198,85 @@ You know all of those super annoying password requirements that each site sets u
 C'YaPass remembers all of those for you.
 
 When you add a password, you initially set all of the password requirements that you want set. It looks like the following:
+<img src="/assets/blog/howItWorks/hiw_007.png">
 
-No alt text provided for this image
 You never have to remember them again, because each time you generate your password, C'YaPass will remember them for you.
 
 See here is the anotherOne password that is 16 characters, contains a special character and includes an uppercase : Ab#9e4235938f5dc
+<img src="/assets/blog/howItWorks/hiw_008.png">
 
-No alt text provided for this image
-Only Have To Create One Pattern
+## Only Have To Create One Pattern
 Since the graphic pattern generates a unique salt value depending on the pattern you draw and since the final hash password is dependent upon the site-key and the graphic pattern, every site-key will generate a different password hash with the same graphic pattern.
 
 Just switch your selection of the site-key and the new password is copied to your clipboard and ready to go.
+<img src="/assets/blog/howItWorks/hiw_009.png">
 
-No alt text provided for this image
-Every Login Has Extremely Strong Unique Password
+## Every Login Has Extremely Strong Unique Password
 This also means that every one of your sites and services will have a different and super strong password.
 
-Your Password Is Generated Every Time
+## Your Password Is Generated Every Time
 Allow me to repeat the fact that your password is not stored anywhere. It is not stored locally or remotely (in a local file or on a remote server).
 
-Instead, you password is generated every time.
+Instead, your password is generated every time.
 
-The One Thing
+## The One Thing
 The one thing that is stored (in JSON) is your site-key that's the first part of the two-part salt.
 
-Your Pattern Is Not Stored
+## Your Pattern Is Not Stored
 The pattern you draw to salt your site-key is not stored anywhere either.
 
 This means that an attacker would have to get your site-key and reproduce your pattern in order to generate your very strong password.
 
-GitHub Source Code : FOSS (Fully Open Source Software
+## GitHub Source Code : FOSS (Fully Open Source Software
 Grab the code and try it out. It's all open source so you can examine it for yourself.
 
-Android Users
+## Android Users
 Android users can get the app at the Google Play store. Try it out and see what you think. It's really nice on mobile devices because you can use strong passwords and never have to type them again. It's so difficult to reproduce a strong password by typing.
 
-Windows 10 Users
+## Windows 10 Users
 https://www.microsoft.com/en-us/p/cyapass/9pfd82d1z7rw
 
 Or just open the Windows Store from your Win 10 Start menu and search for "cyapass".
 
-Apple Users
+## Apple Users
 Apple I had an iOS native app in the App store but I let my dev account lapse and the app was never quite as good as the Android version.
 
-You can get to the app as a PWA (Progressive Web App) at : http://cyapass.com/js/cya.htm
+You can get to the app as a PWA (Progressive Web App) at : http://cyapass.com
 
 This app will work offline and is a very good way to try out the app in your browser.
 
-Linux Users
+## Linux Users
 Linux users can install the app directly from the Snap store at: https://snapcraft.io/cyapass.
 
-You can also read some articles and more about C'YaPass development at my official C'YaPass web site: http://cyapass.com.
+You can also read some articles and more about C'YaPass development at my official C'YaPass web site blog: http://cyapass.com/blog.
 
 ### Bonus Material (For Devs and Other Techies) ###
 If you'd like to try generating your own SHA-256 hashes, the easiest way to do it is if you have NodeJS installed on your machine.
 
-Node Method
+## Node Method
 If you do, then go to a command prompt (console or terminal) and type
 
-$ node -- starts the node REPL
+```$ node -- starts the node REPL```
 
->Crypto = require('crypto'); -- loads the crypto library
-
->Crypto.createHash("sha256").update("your text").digest().toString("hex") -- generates the hash and prints it on console
+```
+Crypto = require('crypto'); -- loads the crypto library
+// generates the hash and prints it on console
+Crypto.createHash("sha256").update("your text").digest().toString("hex") 
+```
 
 There is not supposed to be a break in that second line where the createHash method is called. And the "your text" string is the string that you want to hash.
 
 Here's a snapshot of it in action.
+<img src="/assets/blog/howItWorks/hiw_010.png">
 
-No alt text provided for this image
-C# Method
+## C# Method
 First, go and get LinqPad: The Programmer's Playground
 
-NOTE: Make sure supersimple.txt file contains the data you want to hash and that the path is correct in the short sample below.
+**NOTE**: Make sure supersimple.txt file contains the data you want to hash and that the path is correct in the short sample below.
 
 Then use the following code:
 
+```
 // using System.Security.Cryptography
  SHA256 mySHA256 = SHA256Managed.Create();
  // convert string into bytes
@@ -286,9 +289,11 @@ Then use the following code:
      outstring.AppendFormat("{0:x2}", b);
  }
  Console.WriteLine(outstring.ToString());
-PowerShell Version
-Open up a PowerShell window in Win10 and use the following code to generate a SHA-256 Hash. Simply change the string value that is passed in on the third line of the code.
+ ```
 
+## PowerShell Version
+Open up a PowerShell window and use the following code to generate a SHA-256 Hash. Simply change the string value that is passed in on the third line of the code.
+```
 $stringAsStream = [System.IO.MemoryStream]::new()
 $writer = [System.IO.StreamWriter]::new($stringAsStream)
 $writer.write("a")
@@ -296,3 +301,4 @@ $writer.Flush()
 $stringAsStream.Position = 0
 $outHash = Get-FileHash -InputStream $stringAsStream | Select-Object Hash
 $outHash.hash.ToLower()
+```
